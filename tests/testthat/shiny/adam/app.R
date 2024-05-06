@@ -15,14 +15,14 @@ ui <- shiny::fluidPage(
 # App server function
 server <- function(input, output, session) {
   selected <- dv.filter::data_filter_server(
-    id = "data_filter", 
+    id = "data_filter",
     data = shiny::reactive(adsl)
   )
-  
+
   output$table <- shiny::renderPrint({
     table(selected())
   })
-  
+
   shiny::exportTestValues(
     selected = selected()
   )

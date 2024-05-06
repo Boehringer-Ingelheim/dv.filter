@@ -33,7 +33,7 @@ ui <- shiny::fluidPage(
 
 server <- function(input, output, session) {
   selected <- dv.filter::data_filter_server("data_filter", data = data)
-  
+
   output$data_table <- shiny::renderDataTable({
     data()[selected(), ]
   })

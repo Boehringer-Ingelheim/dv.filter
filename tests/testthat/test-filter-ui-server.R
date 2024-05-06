@@ -7,7 +7,7 @@ get_id <- function(html, name) {
 adsl <- pharmaverseadam::adsl
 
 test_that(
-  "The UI of the data filter module includes selection and input controls, allowing users to establish and modify filtering criteria.",
+  "The UI of the data filter module includes selection and input controls, allowing users to establish and modify filtering criteria.", # nolint
   {
     id <- "data_filter"
     ns <- shiny::NS(id)
@@ -21,7 +21,7 @@ test_that(
 )
 
 test_that(
-  "The server component of the data filter module generates a logical vector, signifying if a row of data should be selected (TRUE) or disregarded (FALSE).",
+  "The server component of the data filter module generates a logical vector, signifying if a row of data should be selected (TRUE) or disregarded (FALSE).", # nolint
   {
     data <- shiny::reactive(adsl)
     shiny::testServer(

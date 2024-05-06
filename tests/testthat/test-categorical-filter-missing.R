@@ -1,4 +1,4 @@
-test_that("For a chosen categorical filter with missing values, an item signifying missingness is incorporated at the top of the filter dropdown menu. By default, all missing values are included.", {
+test_that("For a chosen categorical filter with missing values, an item signifying missingness is incorporated at the top of the filter dropdown menu. By default, all missing values are included.", { # nolint
   adsl <- pharmaverseadam::adsl
   expect_true(sum(is.na(adsl$EOSSTT)) > 0)
 
