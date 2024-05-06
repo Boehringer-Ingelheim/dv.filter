@@ -1,4 +1,4 @@
-test_that("For a chosen numeric filter with missing values, the data filter module includes a checkbox enabling users to either incorporate or omit missing values. By default, all missing values are included.", {# nolint
+test_that("For a chosen numeric filter with missing values, the data filter module includes a checkbox enabling users to either incorporate or omit missing values. By default, all missing values are included.", { # nolint
   adsl <- pharmaverseadam::adsl
   expect_true(sum(is.na(adsl$EOSDT)) > 0)
 
