@@ -50,7 +50,7 @@ create_filter_ui <- function(x, id, var, val) {
     if (na_sum > 0) color[1] <- "#8B0000" # "darkred"
     # https://blog.prototypr.io/css-only-multi-color-backgrounds-4d96a5569a20?gi=ae55142ef933
     style <- glue::glue(
-      "color: {color}; border: 1px solid black; background: 
+      "color: {color}; border: 1px solid black; background:
        linear-gradient(90deg, rgba(173, 216, 230, 1) {N_pct}%, rgba(0, 0, 0, 0) {N_pct}%);"
     )
     picker_ui <- shinyWidgets::pickerInput(

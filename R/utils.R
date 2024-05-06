@@ -38,8 +38,7 @@ get_input_type <- function(x) {
 get_icon_label <- function(data) {
   out <- purrr::map(names(data), function(var) {
     x <- data[[var]]
-    name <- switch(
-      get_first_class(x),
+    name <- switch(get_first_class(x),
       numeric = "sort-numeric-up",
       integer = "sort-numeric-up",
       Date = "calendar",
@@ -54,8 +53,10 @@ get_icon_label <- function(data) {
     icon <- toString(shiny::icon(name))
     label <- attr(x, "label")
     n_miss <- sum(is.na(x))
-    text_code <- paste0("<code style='color:darkblue;'>",
-                        get_first_class(x), "</code>")
+    text_code <- paste0(
+      "<code style='color:darkblue;'>",
+      get_first_class(x), "</code>"
+    )
     text_miss <- ifelse(n_miss == 0, "", paste0("<small style='color:darkred;'>(", n_miss, " missing)</small>"))
     text_label <- ifelse(is.null(label), "", paste0("<br><small><em>", label, "</em></small>"))
     paste0(icon, " ", var, " ", text_code, text_miss, text_label)

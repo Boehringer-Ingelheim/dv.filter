@@ -8,7 +8,7 @@ test_that("The data filter module presents a text output, signifying the number 
     app$get_value(output = "data_filter-text"),
     paste(N, "of", N, "total entries selected")
   )
-  
+
   app$set_inputs(`data_filter-vars` = "SEX")
   app$set_inputs(`data_filter-SEX` = "M")
   app$wait_for_idle(1000)
@@ -16,6 +16,6 @@ test_that("The data filter module presents a text output, signifying the number 
     app$get_value(output = "data_filter-text"),
     paste(sum(adsl$SEX == "M"), "of", N, "total entries selected")
   )
-    
+
   app$stop()
 })
