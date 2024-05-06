@@ -3,7 +3,7 @@ pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   dv.filter: dv.filter.html
-last_built: 2024-03-14T10:38Z
+last_built: 2024-05-06T15:38Z
 urls:
   reference: https://Boehringer-Ingelheim.github.io/dv.filter/reference
   article: https://Boehringer-Ingelheim.github.io/dv.filter/articles
