@@ -1,4 +1,5 @@
-test_that("For a chosen categorical fitler, the data filter module provides users with the capability to deselect all categories.", { # nolint
+test_that("For a chosen categorical fitler, the data filter module provides users with the capability to deselect all categories." %>% 
+            vdoc[["add_spec"]](specs$filter_categorical), { # nolint
   app <- shinytest2::AppDriver$new(app_dir = "shiny/adam/")
 
   app$set_inputs(`data_filter-vars` = "SEX")
