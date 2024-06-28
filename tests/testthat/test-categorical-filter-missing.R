@@ -1,4 +1,4 @@
-test_that("For a chosen categorical filter with missing values, an item signifying missingness is incorporated at the 
+test_that("For a chosen categorical filter with missing values, an item signifying missingness is incorporated at the
           top of the filter dropdown menu. By default, all missing values are included." %>%
   vdoc[["add_spec"]](specs$filter_categorical_missing), { # nolint
   adsl <- pharmaverseadam::adsl
