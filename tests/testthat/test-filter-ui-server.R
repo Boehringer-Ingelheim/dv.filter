@@ -8,7 +8,7 @@ adsl <- pharmaverseadam::adsl
 
 test_that(
   "The UI of the data filter module includes selection and input controls, allowing users to establish and modify filtering criteria." %>%
-    vdoc[["add_spec"]](specs$filter_ui_server), # nolint 
+    vdoc[["add_spec"]](specs$filter_ui_server), # nolint
   {
     id <- "data_filter"
     ns <- shiny::NS(id)
@@ -38,7 +38,7 @@ test_that(
 )
 
 test_that("The data filter module generates an error if the input data is not reactive or metareactive." %>%
-            vdoc[["add_spec"]](specs$filter_ui_server), {
+  vdoc[["add_spec"]](specs$filter_ui_server), {
   shiny::testServer(
     data_filter_server,
     args = list(data = adsl) # non-reactive data
@@ -48,7 +48,7 @@ test_that("The data filter module generates an error if the input data is not re
 })
 
 test_that("The data filter module generates an error if the input data is NULL." %>%
-            vdoc[["add_spec"]](specs$filter_ui_server), {
+  vdoc[["add_spec"]](specs$filter_ui_server), {
   shiny::testServer(
     data_filter_server,
     args = list(data = shiny::reactive(NULL)),

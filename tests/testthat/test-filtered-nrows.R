@@ -1,5 +1,5 @@
 test_that("The data filter module presents a text output, signifying the number of entries selected in the filtered data." %>%
-            vdoc[["add_spec"]](specs$filter_nrows), { # nolint
+  vdoc[["add_spec"]](specs$filter_nrows), { # nolint
   adsl <- pharmaverseadam::adsl
   n <- nrow(adsl)
 
