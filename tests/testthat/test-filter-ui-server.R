@@ -7,7 +7,9 @@ get_id <- function(html, name) {
 adsl <- pharmaverseadam::adsl
 
 test_that(
-  "The UI of the data filter module includes selection and input controls, allowing users to establish and modify filtering criteria.", # nolint
+  "The UI of the data filter module includes selection and input controls, allowing users to establish and
+  modify filtering criteria." %>%
+    vdoc[["add_spec"]](specs$filter_ui_server), # nolint
   {
     id <- "data_filter"
     ns <- shiny::NS(id)
@@ -21,7 +23,9 @@ test_that(
 )
 
 test_that(
-  "The server component of the data filter module generates a logical vector, signifying if a row of data should be selected (TRUE) or disregarded (FALSE).", # nolint
+  "The server component of the data filter module generates a logical vector, signifying if a row of data should be
+  selected (TRUE) or disregarded (FALSE)." %>%
+    vdoc[["add_spec"]](specs$filter_ui_server), # nolint
   {
     data <- shiny::reactive(adsl)
     shiny::testServer(
@@ -35,7 +39,8 @@ test_that(
   }
 )
 
-test_that("The data filter module generates an error if the input data is not reactive or metareactive.", {
+test_that("The data filter module generates an error if the input data is not reactive or metareactive." %>%
+  vdoc[["add_spec"]](specs$filter_ui_server), {
   shiny::testServer(
     data_filter_server,
     args = list(data = adsl) # non-reactive data
@@ -44,7 +49,8 @@ test_that("The data filter module generates an error if the input data is not re
   )
 })
 
-test_that("The data filter module generates an error if the input data is NULL.", {
+test_that("The data filter module generates an error if the input data is NULL." %>%
+  vdoc[["add_spec"]](specs$filter_ui_server), {
   shiny::testServer(
     data_filter_server,
     args = list(data = shiny::reactive(NULL)),

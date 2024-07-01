@@ -1,4 +1,5 @@
-test_that("The data filter module enables users to add or remove a filter variable.", {
+test_that("The data filter module enables users to add or remove a filter variable." %>%
+  vdoc[["add_spec"]](specs$filter_add_remove), {
   app <- shinytest2::AppDriver$new(app_dir = "shiny/adam/")
 
   app$wait_for_idle(1000)
