@@ -1,4 +1,6 @@
-test_that("For a chosen numeric filter, the data filter module provides a range slider and displays a histogram of the numeric variable.", { # nolint
+test_that("For a chosen numeric filter, the data filter module provides a range slider and displays a
+          histogram of the numeric variable." %>%
+  vdoc[["add_spec"]](specs$filter_numeric), { # nolint
   adsl <- pharmaverseadam::adsl
   app <- shinytest2::AppDriver$new(app_dir = "shiny/adam/")
 
