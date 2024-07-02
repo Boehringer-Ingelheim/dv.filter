@@ -1,3 +1,7 @@
+# dv.filter 3.0.0
+
+- GitHub release with QC report
+
 # dv.filter 2.1.1
 
 - Initial release to GitHub
