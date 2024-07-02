@@ -1,10 +1,16 @@
----
-url: https://Boehringer-Ingelheim.github.io/dv.filter
-
 template:
   bootstrap: 5
 
 navbar:
-  right:
-    - icon: fa-github
-      href: https://github.com/Boehringer-Ingelheim/dv.filter
+  type: inverse
+  structure:
+    left: [intro, reference, articles, tutorials, news, qc]
+  components:
+    qc:
+      text: Quality Control
+      href: articles/qc.html
+home:
+  title: dv.filter
+  links:
+  - text: Browse source code
+    href: https://github.com/Boehringer-Ingelheim/dv.filter
