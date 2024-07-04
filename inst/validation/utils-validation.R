@@ -67,29 +67,29 @@ local({
       return(parent)
     }
     unlist(mapply(recursive_ids,
-                  x,
-                  paste(parent, names(x),
-                        sep = if (identical(parent, character(0))) "" else "$"
-                  ),
-                  SIMPLIFY = FALSE, USE.NAMES = FALSE
+      x,
+      paste(parent, names(x),
+        sep = if (identical(parent, character(0))) "" else "$"
+      ),
+      SIMPLIFY = FALSE, USE.NAMES = FALSE
     ))
   }
-  
+
   recursive_ids <- function(x, parent = character(0)) {
     if (!is.list(x)) {
       return(parent)
     }
     unlist(mapply(recursive_ids, x,
-                  paste(parent, names(x),
-                        sep = if (identical(parent, character(0))) "" else "$"
-                  ),
-                  SIMPLIFY = FALSE, USE.NAMES = FALSE
+      paste(parent, names(x),
+        sep = if (identical(parent, character(0))) "" else "$"
+      ),
+      SIMPLIFY = FALSE, USE.NAMES = FALSE
     ))
   }
-  
-  
+
+
   spec_id_list <- recursive_ids(specs)
-  
+
   list(
     specs = specs,
     spec_id_list = spec_id_list,
@@ -102,11 +102,11 @@ local({
         } else {
           spec_id <- list(s_spec) # Otherwise the posterior vapply iterates over the expression
         }
-        
+
         spec_id_chr <- vapply(spec_id, function(x) {
           sub("^[^$]*\\$", "", deparse(x))
         }, FUN.VALUE = character(1))
-        
+
         if (!all(spec_id_chr %in% spec_id_list)) {
           stop("At least one spec is not declared in the spec list")
         } # This should be covered by pack of constants but just in case
@@ -117,37 +117,37 @@ local({
     },
     get_spec = function(test, specs) {
       spec_ids <- utils::strcapture(
-        pattern = "__spec_ids\\{(.*)\\}",
-        x = test,
-        proto = list(spec = character())
-      )[["spec"]]
+            pattern = "__spec_ids\\{(.*)\\}",
+            x = test,
+            proto = list(spec = character())
+          )[["spec"]]
       
       spec_ids <- strsplit(spec_ids, split = ";")
-      
+
       specs_and_id <- list()
-      
+
       for (idx in seq_along(spec_ids)){        
         ids <- spec_ids[[idx]]        
         if (all(!is.na(ids))) {
           this_specs <- list()
-          for (sub_idx in seq_along(ids)) {
-            id <- ids[[sub_idx]]       
-            this_specs[[sub_idx]] <- eval(str2expression(paste0("specs$", id)))
-          }
-          specs_and_id[[idx]] <- list(
-            spec_id = ids,
-            spec = this_specs
-          )
+        for (sub_idx in seq_along(ids)) {
+          id <- ids[[sub_idx]]       
+          this_specs[[sub_idx]] <- eval(str2expression(paste0("specs$", id)))
+        }
+        specs_and_id[[idx]] <- list(
+          spec_id = ids,
+          spec = this_specs
+        )
         } else {
           specs_and_id[[idx]] <- list(
-            spec_id = NULL,
-            spec = NULL
-          )          
+          spec_id = NULL,
+          spec = NULL
+        )          
         }        
       }      
       specs_and_id
     }
-    
+
     
   )
 })
