@@ -12,5 +12,9 @@ navbar:
 home:
   title: dv.filter
   links:
-  - text: Browse source code
-    href: https://github.com/Boehringer-Ingelheim/dv.filter
+    - text: Browse source code
+      href: https://github.com/Boehringer-Ingelheim/dv.filter
+
+repo:
+  url:
+    home: https://github.com/Boehringer-Ingelheim/dv.filter
