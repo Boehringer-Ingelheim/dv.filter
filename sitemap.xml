@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/404.html</loc>
+    <loc>/404.html</loc>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/LICENSE-text.html</loc>
+    <loc>/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/articles/dv.filter.html</loc>
+    <loc>/articles/dv.filter.html</loc>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/articles/index.html</loc>
+    <loc>/articles/dv_filter.html</loc>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/authors.html</loc>
+    <loc>/articles/index.html</loc>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/index.html</loc>
+    <loc>/articles/qc.html</loc>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/news/index.html</loc>
+    <loc>/authors.html</loc>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/reference/create_filter_expr.html</loc>
+    <loc>/index.html</loc>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/reference/create_filter_ui.html</loc>
+    <loc>/news/index.html</loc>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/reference/data_filter_server.html</loc>
+    <loc>/reference/create_filter_expr.html</loc>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/reference/data_filter_ui.html</loc>
+    <loc>/reference/create_filter_ui.html</loc>
   </url>
   <url>
-    <loc>https://Boehringer-Ingelheim.github.io/dv.filter/reference/index.html</loc>
+    <loc>/reference/data_filter_server.html</loc>
+  </url>
+  <url>
+    <loc>/reference/data_filter_ui.html</loc>
+  </url>
+  <url>
+    <loc>/reference/index.html</loc>
   </url>
 </urlset>
