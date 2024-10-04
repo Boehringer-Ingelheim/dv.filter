@@ -191,6 +191,8 @@ data_filter_server <- function(id, data) {
     )
 
     # The first thing that should happen when the dataset changes is that returned becomes NULL
+    # Allows the caller to know that all filters have changed in a multifilter scenario
+    # 
     shiny::observeEvent(data(), {
       returned(NULL)
     },
