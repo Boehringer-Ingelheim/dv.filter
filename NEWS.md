@@ -1,3 +1,7 @@
+# dv.filter 3.0.0-900
+
+- Fixes filter lack of reaction to dataset changes [#8](https://github.com/Boehringer-Ingelheim/dv.filter/issues/8)
+
 # dv.filter 3.0.0
 
 - GitHub release with QC report
