@@ -1,4 +1,8 @@
-# dv.filter 3.0.1
+# dv.filter 3.0.2
+
+- Hotfix preventing spurious updates due to strategy change for equal filtering states
+
+# dv.filter 3.0.2
 
 - Fixes filter lack of reaction to dataset changes [#8](https://github.com/Boehringer-Ingelheim/dv.filter/issues/8)
 
