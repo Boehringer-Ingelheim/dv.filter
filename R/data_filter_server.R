@@ -189,6 +189,17 @@ data_filter_server <- function(id, data) {
       },
       ignoreInit = TRUE
     )
+
+    # The first thing that should happen when the dataset changes is that returned becomes NULL
+    # Allows the caller to know that all filters have changed in a multifilter scenario
+    #
+    shiny::observeEvent(data(),
+      {
+        returned(NULL)
+      },
+      priority = 1
+    )
+
     # Do not update the filter unless there has been any change in the returned vector
     # The returned attribute maybe inconsistent, as filterings that return exactly the same
     # logical vector may not update the expression attribute.
@@ -200,7 +211,7 @@ data_filter_server <- function(id, data) {
     shiny::observeEvent(
       selected(),
       {
-        if (is.null(returned()) || !all(selected() == returned())) {
+        if (is.null(returned()) || !identical(selected(), returned())) {
           returned(selected())
         }
       }
