@@ -203,6 +203,7 @@ data_filter_server <- function(id, data) {
     # Do not update the filter unless there has been any change in the returned vector
     # The returned attribute maybe inconsistent, as filterings that return exactly the same
     # logical vector may not update the expression attribute.
+    # Because we use identical we strip the expr attribute to avoid espurious updates.
     # This should not be much of a problem as no is using that expression.
     # A solution to the above is that the code is returned as part of a list of two reactives,
     # list (value, code). This way altering the code does not necessarily update the depending
@@ -211,7 +212,11 @@ data_filter_server <- function(id, data) {
     shiny::observeEvent(
       selected(),
       {
-        if (is.null(returned()) || !identical(selected(), returned())) {
+        selected_no_expr <- selected()
+        attr(selected_no_expr, "expr") <- NULL
+        returned_no_expr <- returned()
+        attr(returned_no_expr, "expr") <- NULL
+        if (is.null(returned()) || !identical(selected_no_expr, returned_no_expr)) {
           returned(selected())
         }
       }
