@@ -66,7 +66,6 @@ test_that("dv.filter only triggers once when selection changes", {
   app$stop()
 })
 
-
 # FIXME: We don't want this test to pass
 test_that("dv.filter output expression is not always in sync with actual filter state", {
   # NOTE: We call the patch mentioned in the previous test a "patch" and not a "fix" because although it
@@ -155,7 +154,6 @@ test_that("dv.filter offers fractional steps for range selection of integer data
   testthat::expect_true(is_fractional)
 })
 
-
 # TODO: We (maybe) don't want this test to pass
 test_that("dv.filter offers filters in alphabetical order", {
   # NOTE: Filter variable selection is offered in alphabetical order, dropping the column order of the input dataset
@@ -232,7 +230,6 @@ test_that("dv.filter collapses menus the user is interacting with", {
 
   app$stop()
 })
-
 
 # FIXME: We don't want this test to pass
 test_that("dv.filter returns logical(0) when filtering an all-NA numeric variable", {
