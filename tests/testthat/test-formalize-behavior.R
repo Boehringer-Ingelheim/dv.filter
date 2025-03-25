@@ -66,6 +66,12 @@ test_that("dv.filter only triggers once when selection changes", {
   app$stop()
 })
 
+# NOTE: These tests are a formalization of the current behavior of the filter.
+#       They are here so that we are aware of changes to that behavior, because they can have downstream effects on
+#       our modules. 
+#       That doesn't mean we want the documented behaviors to persist. Read the comments surrounding the tests for
+#       more information.
+
 # FIXME: We don't want this test to pass
 test_that("dv.filter output expression is not always in sync with actual filter state", {
   # NOTE: We call the patch mentioned in the previous test a "patch" and not a "fix" because although it
@@ -123,15 +129,7 @@ test_that("dv.filter takes a bit over one second to produce a new selection", {
   app$stop()
 })
 
-# TODO: We (maybe) don't want this test to pass
-test_that("dv.filter discards unused levels on factor variables", {
-  # NOTE: Dropping unused levels from a factor is a questionable behavior, since it reduces expressiveness of apps that
-  #       have those. Granted, these are edge cases, but still consider:
-  #       - Users scratching their head as to why they can't include/exclude subjects from Spain on a Spain+Germany
-  #         trial, when the reason is that all Spanish subjects have been dropped during preprocessing.
-  #       - On that same trial/app, a user wants to curate a bookmark which only contemplates German subjects. However,
-  #         the lack of a selector makes it impossible until a dataset that includes at least a Spanish subject is fed
-  #         into the application.
+test_that("dv.filter does not display unused levels on selectors associated to factor variables", {
   app <- shinytest2::AppDriver$new(app)
 
   app$wait_for_idle()
