@@ -86,7 +86,7 @@ data_filter_server <- function(id, data) {
             inputId = "vars",
             selected = input$vars[input$vars != filter_var]
           )
-        })
+        }, ignoreInit = TRUE, once = TRUE)
       })
     })
 
