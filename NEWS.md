@@ -1,3 +1,7 @@
+# dv.filter 3.0.2-9000
+
+- Fix bug of immediately removing a filter definition after being added
+
 # dv.filter 3.0.2
 
 - Hotfix preventing spurious updates due to strategy change for equal filtering states
