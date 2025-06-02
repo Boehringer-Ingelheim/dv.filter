@@ -7,4 +7,4 @@ We welcome contributions of all kinds – not only code, but also documentation,
 
 We believe every contribution matters — whether it's fixing a typo, improving documentation, or writing a major feature. That’s why we want to recognize external contributors who helped making this project better. Thank you!
 
-- @kushmann
+- @khusmann
