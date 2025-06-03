@@ -175,8 +175,7 @@ test_that("dv.filter offers filters in alphabetical order", {
   app$stop()
 })
 
-# FIXME: We don't want this test to pass
-test_that("dv.filter fails to add filter after removing it with 'remove' button", {
+test_that("dv.filter does not fail to add filter after removing it with 'remove' button", {
   # NOTE: The single-filter remove button makes the module misbehave. Trying to re-add a removed button only makes
   #       the UI blink.
   app <- shinytest2::AppDriver$new(app)
@@ -187,7 +186,7 @@ test_that("dv.filter fails to add filter after removing it with 'remove' button"
   app$set_inputs(`data_filter-vars` = "age")
   app$wait_for_idle(1000)
   enabled_filters <- app$get_values()[["input"]][["data_filter-vars"]]
-  testthat::expect_equal(enabled_filters, "age") # it's there
+  testthat::expect_equal(enabled_filters, "age") 
 
   # remove and re-add age filter
   app$click("data_filter-age_remove")
@@ -195,7 +194,7 @@ test_that("dv.filter fails to add filter after removing it with 'remove' button"
   app$set_inputs(`data_filter-vars` = "age")
   app$wait_for_idle(1000)
   enabled_filters <- app$get_values()[["input"]][["data_filter-vars"]]
-  testthat::expect_null(enabled_filters) # it's not there (bug)
+  testthat::expect_equal(enabled_filters, "age")
 
   app$stop()
 })
