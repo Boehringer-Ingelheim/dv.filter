@@ -1,4 +1,4 @@
-# dv.filter 3.0.2-9000
+# dv.filter 3.0.3
 
 - Fix bug of immediately removing a filter definition after being added
 
