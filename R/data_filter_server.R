@@ -86,7 +86,7 @@ data_filter_server <- function(id, data) {
             inputId = "vars",
             selected = input$vars[input$vars != filter_var]
           )
-        })
+        }, ignoreInit = TRUE, once = TRUE)
       })
     })
 
@@ -200,15 +200,13 @@ data_filter_server <- function(id, data) {
       priority = 1
     )
 
-    # Do not update the filter unless there has been any change in the returned vector
-    # The returned attribute maybe inconsistent, as filterings that return exactly the same
-    # logical vector may not update the expression attribute.
-    # Because we use identical we strip the expr attribute to avoid espurious updates.
-    # This should not be much of a problem as no is using that expression.
-    # A solution to the above is that the code is returned as part of a list of two reactives,
-    # list (value, code). This way altering the code does not necessarily update the depending
-    # reactives, and the code can be read independently.
-
+    # Do not update the filter unless there has been an actual change in the returned vector
+    # The returned attribute may be inconsistent, as filterings that return exactly the same
+    # logical vector will not update the expression attribute.
+    # Because we use `identical`, we strip the expr attribute to avoid spurious updates.
+    # This should not be much of a problem as no one is using that expression.
+    # The above scenario could be solved by returning a list with two independent reactives,
+    # one for the logical selected array and one for the filtering expression.
     shiny::observeEvent(
       selected(),
       {
