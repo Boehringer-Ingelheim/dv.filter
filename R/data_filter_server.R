@@ -65,7 +65,7 @@ data_filter_server <- function(id, data) {
           dropupAuto = FALSE,
           title = "Add / Remove Filters",
           selectedTextFormat = "static",
-          style = "btn-primary",          
+          style = "btn-primary",
           container = "body"
         )
       )

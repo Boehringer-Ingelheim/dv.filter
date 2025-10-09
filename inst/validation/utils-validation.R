@@ -36,7 +36,7 @@ if (FALSE) {
   test_that(vdoc[["add_spec"]]("my test_description", my_spec), {
     ...
   })
-  
+
   test_that(vdoc[["add_spec"]]("my test_description", specs[["my"]][["hier"]][["spec"]]), {
     ...
   })
