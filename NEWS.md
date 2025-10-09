@@ -1,3 +1,7 @@
+# dv.filter 3.0.3-9000
+
+- Minor change to make it compatible with Bootstrap 5.x
+
 # dv.filter 3.0.3
 
 - Fix bug of immediately removing a filter definition after being added

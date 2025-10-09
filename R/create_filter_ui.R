@@ -65,7 +65,8 @@ create_filter_ui <- function(x, id, var, val) {
       ),
       options = shinyWidgets::pickerOptions(
         actionsBox = TRUE,
-        liveSearch = TRUE
+        liveSearch = TRUE,
+        container = "body"
       )
     )
     filter_ui <- shiny::div(var_ui, remove_ui, picker_ui)
