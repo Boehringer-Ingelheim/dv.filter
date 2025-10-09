@@ -1,4 +1,4 @@
-# dv.filter 3.0.3-9000
+# dv.filter 3.0.4
 
 - Minor change to make it compatible with Bootstrap 5.x
 
